@@ -4,7 +4,11 @@
     <div class="container">
         <h1>Inserisci un nuovo progetto</h1>
 
+
         <form action="{{ route('admin.projects.store') }}" method="POST">
+
+        <button class="btn btn-success mb-3" type="submit">Salva</button>
+
 
             @csrf
 
@@ -28,7 +32,18 @@
                 <input type="text" class="form-control" id="end_date" name="end_date">
             </div>
 
-            <button class="btn btn-success" type="submit">Salva</button>
+            <div>
+                <label for="type" class="form-label">Tipologia</label>
+                <select class="form-select" id="type" name="type_id">
+                    <option value="">Seleziona</option>
+                    @foreach ($types as $type)
+                        <option value="{{ $type->id }}">{{ $type->name }}</option>
+                    @endforeach
+            </div>
+
+
+
+
         </form>
     </div>
 @endsection

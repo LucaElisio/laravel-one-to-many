@@ -21,8 +21,10 @@
                     <th scope="col">Descrizione</th>
                     <th scope="col">Data di inizio</th>
                     <th scope="col">Data di fine</th>
+                    <th scope="col">Tipologia</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
+
 
 
 
@@ -35,6 +37,8 @@
                     <td>{{$project->content}}</td>
                     <td>{{$project->start_date}}</td>
                     <td>{{$project->end_date}}</td>
+                    <td><span>{{$project->type?->name}}</span></td>
+
                     <td><a href="{{ route('admin.projects.show', ['project'=>$project->slug]) }}" class="btn btn-info">Dettagli</a></td>
                     <td>
                         <form action="{{route('admin.projects.destroy', ['project'=>$project->slug])}}" method="POST">
