@@ -7,7 +7,7 @@
     <p><strong>Data inizio:</strong> {{$project->start_date}}</p>
     <p><strong>Data fine:</strong> {{$project->end_date}}</p>
     <strong>Tipologia: </strong>
-    <span style="background-color: {{$project->type->color}}; padding: 5px;">{{$project->type->name}}</span>
+    <span style="background-color: {{$project->type?->color}}; padding: 5px;">{{$project->type?->name}}</span>
 
     <hr>
     
